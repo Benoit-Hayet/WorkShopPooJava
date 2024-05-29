@@ -3,11 +3,15 @@ import org.w3c.dom.ls.LSOutput;
 public class Main {
 
     public static void main(String[] args) {
-        Animal lion = new Animal ("Lion",51,true,4);
-        Animal parrots = new Animal ("Perroquet",7,false,2);
+        Lion Toto = new Lion("Lion", 51, 4, true, 4, true);
+        Parrot parrot = new Parrot("Perroquet", 7, false, 2, true);
 
-        System.out.println(lion.introduce()+" "+lion.isDangerous());
-        System.out.println(parrots.introduce()+" "+parrots.isDangerous());
+        System.out.println(Toto.introduce());
+        System.out.println("Le lion est-il dangereux ? " + Toto.isDangerous());
+        Toto.hunt();
 
-        }
+        System.out.println(parrot.introduce());
+        System.out.println("Le perroquet est-il dangereux ? " + parrot.isDangerous());
+        parrot.fly();
+    }
 }

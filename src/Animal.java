@@ -1,15 +1,15 @@
 public class Animal {
 
-    private String name;
-    private int size;
-    private boolean isCarnivorous = false;
-    private int pawsNbr;
+    protected String name;
+    protected int size;
+    protected boolean isCarnivorous = false;
+    protected int pawNumber;
 
-    public Animal (String name,int size, boolean isCarnivorous, int pawsNbr){
+    public Animal (String name,int size, boolean isCarnivorous, int pawNumber){
         this.name = name;
         this.size = size;
         this.isCarnivorous = isCarnivorous;
-        this.pawsNbr = pawsNbr;
+        this.pawNumber = pawNumber;
     }
 
     public String getName() {
@@ -37,21 +37,22 @@ public class Animal {
     }
 
     public int getPawsNbr() {
-        return this.pawsNbr;
+        return this.pawNumber;
     }
 
     public void setPawsNbr(int pawsNbr) {
-        this.pawsNbr = pawsNbr;
+        this.pawNumber = pawNumber;
     }
 
     public String introduce() {
         String statutCarnivorous = isCarnivorous?"Carnivorous":"Not Carnivorous";
-       return "Hey, en tant que " + getName() + ", j’ai " + getPawsNbr() + " pattes et je suis " + statutCarnivorous;
+       return "Hey, en tant que " + this.name + ", j’ai " + this.pawNumber + " pattes et je suis " + statutCarnivorous;
 
     }
 
     public String isDangerous() {
-        if (getSize() > 50 && isCarnivorous()) {
+        boolean isDangerous = false;
+        if (getSize() > 50 && this.isCarnivorous) {
             return "Je suis dangereux";
         } else {
             return "Je ne suis pas dangereux";
